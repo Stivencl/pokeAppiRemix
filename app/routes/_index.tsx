@@ -8,13 +8,17 @@ export const loader = async () => {
 
 }
 
+
+
 export default function PokeList(){
 const list = useLoaderData<typeof loader>()
  console.log(list)
 
  return(
+         
         <ul>
             {list.results.map((element: any) => (
+              
                 <li key={element.name}>
                     <Link to={`pokemon/${element.name}`}>{element.name}</Link>
                     
