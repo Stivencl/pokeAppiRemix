@@ -5,8 +5,8 @@ import invariant from "tiny-invariant";
 
 export const loader = async (
     {params}:LoaderFunctionArgs) => {
-      invariant(params.namedetalles, "Name is undefined")
-    const pokename = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.namedetalles}`);
+      invariant(params.name, "Name is undefined")
+    const pokename = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.name}`);
     
     return json(await pokename.json()); 
       
